@@ -2,13 +2,14 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-04 17:02:18
+ * @LastEditTime: 2024-02-21 17:55:59
  * @description: store
  */
 
 export const useAppStore = defineStore('app', () => {
   // state
   const token = ref<string>('')
+  const hasLoading = ref<boolean>(true)
 
   // action
   /** 
@@ -26,7 +27,10 @@ export const useAppStore = defineStore('app', () => {
     token.value = ''
   }
 
-  return { token, SET_TOKEN, REMOVE_TOKEN }
+  return {
+    token, hasLoading,
+    SET_TOKEN, REMOVE_TOKEN
+  }
 }, {
   persist: { // persist:true 默认保存在local内
     key: 'app',
