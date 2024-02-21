@@ -1,0 +1,8 @@
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    // "ignoreDeprecations": "5.0", // 必须设置5.0才能设置suppressImplicitAnyIndexErrors
+    // "suppressImplicitAnyIndexErrors": true, // 解决any|string...等不能用于索引的提示
+  }
+}
