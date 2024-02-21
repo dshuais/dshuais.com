@@ -1,23 +1,20 @@
-import { defaultThemeConfig } from "~/utils/theme";
-import type { Theme } from "~/utils/theme";
 
 /*
  * @Author: dushuai
  * @Date: 2023-12-10 11:53:46
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-10 12:21:31
+ * @LastEditTime: 2024-02-21 16:29:06
  * @Description: 公共配置store
  */
 export const useSettings = defineStore(
   "settings",
   () => {
     // store
-    const theme = ref<Theme>(defaultThemeConfig);
+    const theme = ref<string>();
 
     // action
-    function SET_THEME(the: Theme) {
-      console.log("set");
-      theme.value = the;
+    function SET_THEME(th: string) {
+      theme.value = th;
     }
 
     return {

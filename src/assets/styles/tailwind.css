@@ -1,9 +1,3 @@
-@import './base.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --ds-dsssss-color: #000;
-}

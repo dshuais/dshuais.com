@@ -352,7 +352,7 @@ export const ThisLog = () => (
   background-color:skyblue;`
   ),
   console.log("注意看 这个男孩叫小帅"),
-  console.log("This is dshuais's homepage"),
+  console.log("This is dshuais's website"),
   console.log("此主页and博客正在building"),
   console.log("不定时更新"),
   console.log("博主正在社畜坐牢"),
