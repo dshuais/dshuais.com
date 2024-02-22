@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-22 12:17:12
+ * @LastEditTime: 2024-02-22 17:24:09
  * @description: index
 -->
 <script setup lang="ts">
@@ -20,8 +20,12 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="">
-    wote
+  <div class="container">
+    <GlitchText text="Hi, dshuais."></GlitchText>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+.container {
+  background: #000;
+}
+</style>
