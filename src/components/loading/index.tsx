@@ -1,5 +1,10 @@
-import styles from './index.module.scss';
-
+/*
+ * @Author: dushuai
+ * @Date: 2024-02-21 17:02:58
+ * @LastEditors: dushuai
+ * @LastEditTime: 2024-02-22 12:16:39
+ * @description: Loading
+ */
 type Props = {
   hasLoading: boolean;
 }
@@ -16,18 +21,18 @@ export default defineComponent({
     const env = useRuntimeConfig()
 
     return () => (
-      <div id={styles['loader-wrapper']} class={[props.hasLoading ? void 0 : styles.loaded, 'select-none']}>
-        <div class={styles.loader}>
-          <div class={styles['loader-circle']} />
-          <div class={styles['loader-text']}>
-            <span class={styles.name}>
+      <div id='loader-wrapper' class={[props.hasLoading ? void 0 : 'loaded', 'select-none']}>
+        <div class='loader'>
+          <div class='loader-circle' />
+          <div class='loader-text'>
+            <span class='name'>
               {env.public.VITE_SITE_NAME}
             </span>
-            <span class={styles.tip}> 加载中 </span>
+            <span class='tip'> 加载中 </span>
           </div>
         </div>
-        <div class={[styles['loader-section'], styles['section-left']]} />
-        <div class={[styles['loader-section'], styles['section-right']]} />
+        <div class='loader-section section-left' />
+        <div class='loader-section section-right' />
       </div>
     )
   }
