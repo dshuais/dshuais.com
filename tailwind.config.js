@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 17:55:41
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-21 16:21:23
+ * @LastEditTime: 2024-02-23 14:18:03
  * @description: tailwind
  */
 /** @type {import('tailwindcss').Config} */
@@ -39,12 +39,12 @@ export default {
     './src/assets/**/*.css',
   ],
   theme: {
-    // screens: {
-    //   sm: '480px',
-    //   md: '768px',
-    //   lg: '976px',
-    //   xl: '1440px',
-    // },
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
     // extend: {
     // fontFamily: {
     //   sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
