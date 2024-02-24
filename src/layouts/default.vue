@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-24 22:34:03
+ * @LastEditTime: 2024-02-24 22:54:06
  * @description: default layout
 -->
 <script setup lang="ts">
@@ -12,9 +12,11 @@ const { hasLoading: loading } = storeToRefs(useAppStore())
 const hasLoading = ref(true);
 
 onMounted(() => {
-  setTimeout(() => {
-    hasLoading.value = false;
-  }, 500);
+  if (process.client) {
+    setTimeout(() => {
+      hasLoading.value = false;
+    }, 500);
+  }
 })
 
 watchEffect(() => {
