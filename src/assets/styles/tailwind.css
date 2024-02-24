@@ -1,5 +1,6 @@
 @import '~/components/loading/index.module.scss';
 @import './base.css';
+@import './fonts.css';
 
 @tailwind base;
 @tailwind components;
