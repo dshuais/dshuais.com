@@ -145,3 +145,95 @@
     clip: rect(31px, 9999px, 149px, 0)
   }
 }
+
+
+// 自动播放故障文字 =======================================
+.title {
+  filter: blur(10px);
+  letter-spacing: -3rem;
+  color: white;
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1;
+  -webkit-text-stroke: 1px black;
+  animation:
+    glitch 1s 0.5s linear infinite,
+    expand 1s forwards;
+}
+
+.title:before,
+.title:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.title:before {
+  animation: glitchTop 1s 0.5s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.title:after {
+  animation: glitchBotom 1.5s 0.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes expand {
+  to {
+    letter-spacing: 0.4rem;
+    filter: blur(0px);
+  }
+}
+
+@keyframes glitch {
+
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+@keyframes glitchTop {
+
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+@keyframes glitchBotom {
+
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+

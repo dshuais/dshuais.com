@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-26 16:36:58
+ * @LastEditTime: 2024-02-26 16:59:59
  * @description: index
 -->
 <script setup lang="ts">
@@ -22,14 +22,11 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="main bg-[#333] scale-125 transition-[transform] delay-500 overflow-x-hidden"
-    :class="{ 'zoom': !hasLoading }">
+  <div class="main scale-125 transition-[transform] delay-500 overflow-x-hidden" :class="{ 'zoom': !hasLoading }">
 
-    <ClientOnly>
-      <LoadingImg :has-loading="hasLoading" />
-    </ClientOnly>
+    <GlitchText text="Hi, dushuai!" type="auto" class="mt-20"></GlitchText>
 
-    <GlitchText text="Hi, dushuai!" class="text-center mt-20"></GlitchText>
+
   </div>
 </template>
 
@@ -40,6 +37,7 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
+  /* background-color: #333; */
 }
 
 .zoom {

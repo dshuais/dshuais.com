@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-26 16:40:00
+ * @LastEditTime: 2024-02-26 16:43:38
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -56,7 +56,7 @@ export default defineComponent({
           setTimeout(() => {
             len.value = 0
           }, 2000);
-        }, 200);
+        }, 700);
       }
     })
 
