@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-26 11:43:28
+ * @LastEditTime: 2024-02-26 15:01:27
  * @description: index
 -->
 <script setup lang="ts">
@@ -24,6 +24,11 @@ onMounted(() => {
 <template>
   <div class="main bg-[#333] scale-125 transition-[transform] delay-500 overflow-x-hidden"
     :class="{ 'zoom': !hasLoading }">
+
+    <ClientOnly>
+      <LoadingImg />
+    </ClientOnly>
+
     <GlitchText text="Hi, dushuai!" class="text-center mt-20"></GlitchText>
   </div>
 </template>
