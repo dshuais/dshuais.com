@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-26 15:01:27
+ * @LastEditTime: 2024-02-26 16:36:58
  * @description: index
 -->
 <script setup lang="ts">
@@ -26,7 +26,7 @@ onMounted(() => {
     :class="{ 'zoom': !hasLoading }">
 
     <ClientOnly>
-      <LoadingImg />
+      <LoadingImg :has-loading="hasLoading" />
     </ClientOnly>
 
     <GlitchText text="Hi, dushuai!" class="text-center mt-20"></GlitchText>

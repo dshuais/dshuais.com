@@ -2,14 +2,25 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-26 16:25:49
+ * @LastEditTime: 2024-02-26 16:40:00
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
 
+
+type Props = {
+  hasLoading: boolean;
+}
+
 export default defineComponent({
   name: 'LoadingImg',
-  setup() {
+  props: {
+    hasLoading: {
+      type: Boolean,
+      default: true
+    }
+  },
+  setup(props: Props) {
     const bg = ref<HTMLElement>() // 图片节点
     const row = ref<number>(0) // 行数
     const col = ref<number>(0) // 列数
@@ -39,12 +50,14 @@ export default defineComponent({
     initImg()
 
     onMounted(() => {
-      setTimeout(() => {
-        bg.value?.style.setProperty('--o', '0')
+      if (props.hasLoading) {
         setTimeout(() => {
-          len.value = 0
-        }, 1000);
-      }, 3000);
+          bg.value?.style.setProperty('--o', '0')
+          setTimeout(() => {
+            len.value = 0
+          }, 2000);
+        }, 200);
+      }
     })
 
     return () => (
@@ -55,7 +68,7 @@ export default defineComponent({
               <div class="grid" style={{ gridTemplateColumns: `repeat(${col.value}, 1fr)` }}>
                 {
                   new Array(row.value * col.value).fill(0).map((_, index) => (
-                    <div class="bg-white opacity-[var(--o)] aspect-1"
+                    <div class="bg-white dark:bg-gray-900 opacity-[var(--o)] aspect-1"
                       style={getCellStyle(Math.floor((index - 1) / col.value) + 1, ((index - 1) % col.value) + 1)}>
                     </div>
                   ))
