@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-26 16:43:38
+ * @LastEditTime: 2024-02-26 17:20:44
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -76,6 +76,7 @@ export default defineComponent({
               </div>
             </div> : ''
         }
+        <div class={styles.gray}></div>
       </div>
     )
   }
