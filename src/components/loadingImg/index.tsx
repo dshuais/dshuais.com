@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 17:27:39
+ * @LastEditTime: 2024-02-27 17:56:58
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -25,7 +25,9 @@ export default defineComponent({
     const row = ref<number>(0) // 行数
     const col = ref<number>(0) // 列数
     const len = ref<number>(0) // 每个网格的大小
-    const url = ref<string>() // 当前加载的图片索引
+    const url = ref<string>() // 随机加载的的图片
+
+    const { wallpaper, wallpaperUrl, wallpapers } = useWallpaper()
 
     /**
      * 初始化图片和网格大小
@@ -40,7 +42,7 @@ export default defineComponent({
       row.value = Math.floor(imgH / len.value)
       col.value = Math.floor(imgW / len.value)
 
-      const index = Math.floor(Math.random() * 46)
+      const index = Math.floor(Math.random() * wallpapers.value)
       url.value = getImageUrl(`home/${index}.png`)
     }
 
@@ -51,10 +53,19 @@ export default defineComponent({
       }
     }
 
+    function setImg() {
+      let img = url.value
+      if (wallpaper.value === 'set') img = wallpaperUrl.value
+      bg.value?.style.setProperty('--img', `url('${img}')`)
+    }
+
+
     initImg()
 
     onMounted(() => {
-      bg.value?.style.setProperty('--img', `url('${url.value}')`)
+
+      setImg()
+
       if (props.hasLoading) {
         setTimeout(() => {
           bg.value?.style.setProperty('--o', '0')

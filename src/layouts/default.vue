@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-26 16:47:38
+ * @LastEditTime: 2024-02-27 17:56:16
  * @description: default layout
 -->
 <script setup lang="ts">
@@ -35,7 +35,6 @@ watchEffect(() => {
       <LoadingImg :has-loading="hasLoading" />
     </ClientOnly>
 
-    <!-- <div>我是default layout</div> -->
-    <slot :has-loading="hasLoading" />
+    <slot />
   </div>
 </template>

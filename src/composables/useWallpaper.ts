@@ -2,7 +2,7 @@
 * @Author: dushuai
 * @Date: 2024-02-27 17:28:59
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 17:46:48
+ * @LastEditTime: 2024-02-27 17:51:14
 * @description: 壁纸切换方式
 */
 
@@ -15,7 +15,7 @@ export const useWallpaper = () => {
   /**
    * 壁纸数量 可用node计算img/home内数量（偷懒没做）
    */
-  const wallpapers = 46
+  const wallpapers = ref<number>(46)
 
   /**
    * 设置切换方式
