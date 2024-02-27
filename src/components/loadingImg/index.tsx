@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-26 17:20:44
+ * @LastEditTime: 2024-02-27 16:56:29
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -25,6 +25,7 @@ export default defineComponent({
     const row = ref<number>(0) // 行数
     const col = ref<number>(0) // 列数
     const len = ref<number>(0) // 每个网格的大小
+    const url = ref<string>() // 当前加载的图片索引
 
     /**
      * 初始化图片和网格大小
@@ -38,6 +39,9 @@ export default defineComponent({
       len.value = Math.min(imgW, imgH) / Math.sqrt(maxGridCount)
       row.value = Math.floor(imgH / len.value)
       col.value = Math.floor(imgW / len.value)
+
+      const index = Math.floor(Math.random() * 38)
+      url.value = getImageUrl(`home/${index}.png`)
     }
 
     function getCellStyle(rowIndex: number, colIndex: number) {
@@ -50,6 +54,7 @@ export default defineComponent({
     initImg()
 
     onMounted(() => {
+      bg.value?.style.setProperty('--img', `url('${url.value}')`)
       if (props.hasLoading) {
         setTimeout(() => {
           bg.value?.style.setProperty('--o', '0')
