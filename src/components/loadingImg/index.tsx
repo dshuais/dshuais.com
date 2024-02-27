@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 18:15:33
+ * @LastEditTime: 2024-02-27 18:20:16
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -46,7 +46,6 @@ export default defineComponent({
         const url = getImageUrl(`home/${index}.png`)
         setWallpaperUrl(url)
       }
-
     }
 
     function getCellStyle(rowIndex: number, colIndex: number) {
@@ -64,15 +63,11 @@ export default defineComponent({
     initImg()
 
     onMounted(() => {
-
       setImg()
-
-      console.log('loadingimg', props.hasLoading);
     })
 
     watchEffect(() => {
       if (!props.hasLoading) {
-        console.log('播放', props.hasLoading);
         bg.value?.style.setProperty('--o', '0')
         setTimeout(() => {
           len.value = 0
