@@ -3,7 +3,7 @@
  * @Author: dushuai
  * @Date: 2023-12-10 11:53:46
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 17:44:53
+ * @LastEditTime: 2024-02-27 18:07:32
  * @Description: 公共配置store
  */
 export const useSettings = defineStore(
@@ -17,7 +17,7 @@ export const useSettings = defineStore(
      * set  用户选择
      */
     const wallpaper = ref<App.WallpaperType>('auto');
-    const wallpaperUrl = ref<string>();
+    const wallpaperUrl = ref<string>('');
 
     // action
     function SET_THEME(th: string) {

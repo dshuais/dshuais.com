@@ -2,7 +2,7 @@
 * @Author: dushuai
 * @Date: 2024-02-27 17:28:59
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 17:51:14
+ * @LastEditTime: 2024-02-27 18:04:28
 * @description: 壁纸切换方式
 */
 
@@ -25,6 +25,14 @@ export const useWallpaper = () => {
   const setWallpaper = (type: App.WallpaperType, url?: string) => {
     if (type === 'set' && !url) console.error('url is undefined!')
     wallpaper.value = type
+    wallpaperUrl.value = url as string
+  }
+
+  /**
+   * 只设置url
+   * @param url 
+   */
+  const setWallpaperUrl = (url: string) => {
     wallpaperUrl.value = url
   }
 
@@ -33,12 +41,12 @@ export const useWallpaper = () => {
    */
   const resetWallpaper = () => {
     wallpaper.value = 'auto'
-    wallpaperUrl.value = void 0
+    wallpaperUrl.value = ''
   }
 
   return {
     wallpaper, wallpaperUrl, wallpapers,
-    setWallpaper, resetWallpaper
+    setWallpaper, resetWallpaper, setWallpaperUrl
   }
 
 }
