@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 18:20:16
+ * @LastEditTime: 2024-02-27 18:39:14
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -43,7 +43,7 @@ export default defineComponent({
 
       if (wallpaper.value === 'auto') {
         const index = Math.floor(Math.random() * wallpapers.value)
-        const url = getImageUrl(`home/${index}.png`)
+        const url = `https://files.dshuais.com/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
         setWallpaperUrl(url)
       }
     }
