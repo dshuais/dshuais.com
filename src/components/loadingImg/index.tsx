@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 16:56:29
+ * @LastEditTime: 2024-02-27 17:27:39
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -40,7 +40,7 @@ export default defineComponent({
       row.value = Math.floor(imgH / len.value)
       col.value = Math.floor(imgW / len.value)
 
-      const index = Math.floor(Math.random() * 38)
+      const index = Math.floor(Math.random() * 46)
       url.value = getImageUrl(`home/${index}.png`)
     }
 
