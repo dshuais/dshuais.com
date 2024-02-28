@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-28 17:15:45
+ * @LastEditTime: 2024-02-28 17:48:23
  * @description: index
 -->
 <script setup lang="ts">
@@ -32,10 +32,25 @@ onMounted(() => {
         <GlitchText class="hidden sm:block" text="Hi, dushuai!" type="auto"></GlitchText>
       </div>
 
-      <section class="relative w-full mx-auto mt-12">
-        <Card>
-          test
-        </Card>
+      <section class="relative w-full mx-auto mt-12 flex">
+        <div class="relative flex-1 h-96 mr-24">
+          <Card class="font-Pacifico">
+            test
+          </Card>
+        </div>
+        <div class="relative flex-1">
+          <div class="flex items-center justify-between">
+            <Card>
+              test
+            </Card>
+            <Card>
+              test
+            </Card>
+          </div>
+          <div class="mt-8 mb-4">
+            网站列表
+          </div>
+        </div>
       </section>
     </div>
 

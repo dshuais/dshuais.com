@@ -8,3 +8,15 @@
     transform: scale(1);
   }
 }
+
+.font-logo {
+  font-family: 'Logo';
+}
+
+.font-time {
+  font-family: 'Time';
+}
+
+.font-Pacifico {
+  font-family: 'Pacifico-Regular';
+}

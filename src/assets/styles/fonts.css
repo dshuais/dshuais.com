@@ -115,3 +115,14 @@
 }
 /* Glitch字体 end -------------------------------------------- */
 
+@font-face {
+  font-family: Pacifico-Regular;
+  font-display: swap;
+  src: url(~/assets/fonts/Pacifico-Regular.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: Time;
+  font-display: swap;
+  src: url(~/assets/fonts/Time.ttf) format("truetype")
+}
