@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 18:39:14
+ * @LastEditTime: 2024-02-28 09:51:52
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -26,7 +26,7 @@ export default defineComponent({
     const col = ref<number>(0) // 列数
     const len = ref<number>(0) // 每个网格的大小
 
-    const { wallpaper, wallpaperUrl, wallpapers, setWallpaperUrl } = useWallpaper()
+    const { wallpaperUrl } = useWallpaper()
 
     /**
      * 初始化图片和网格大小
@@ -40,12 +40,6 @@ export default defineComponent({
       len.value = Math.min(imgW, imgH) / Math.sqrt(maxGridCount)
       row.value = Math.floor(imgH / len.value)
       col.value = Math.floor(imgW / len.value)
-
-      if (wallpaper.value === 'auto') {
-        const index = Math.floor(Math.random() * wallpapers.value)
-        const url = `https://files.dshuais.com/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
-        setWallpaperUrl(url)
-      }
     }
 
     function getCellStyle(rowIndex: number, colIndex: number) {

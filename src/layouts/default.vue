@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 18:18:33
+ * @LastEditTime: 2024-02-28 09:50:43
  * @description: default layout
 -->
 <script setup lang="ts">
@@ -11,7 +11,20 @@ import { useAppStore } from '~/store';
 const { hasLoading: loading } = storeToRefs(useAppStore())
 const hasLoading = ref(true);
 
-const { wallpaperUrl } = useWallpaper()
+const { wallpaperUrl, wallpaper, wallpapers, setWallpaperUrl } = useWallpaper()
+
+/**
+ * 优先初始化图片 防止new Image加载之前的缓存图片
+ */
+function initImg() {
+  if (wallpaper.value === 'auto') {
+    const index = Math.floor(Math.random() * wallpapers.value)
+    const url = `https://files.dshuais.com/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
+    setWallpaperUrl(url)
+  }
+}
+
+initImg()
 
 onMounted(() => {
   if (process.client) {
