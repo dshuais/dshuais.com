@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-27 12:14:00
+ * @LastEditTime: 2024-02-28 15:52:49
  * @description: index
 -->
 <script setup lang="ts">
@@ -30,6 +30,9 @@ onMounted(() => {
       <GlitchText class="hidden sm:block" text="Hi, dushuai!" type="auto"></GlitchText>
     </div>
 
+    <Card>
+      test
+    </Card>
 
   </div>
 </template>
