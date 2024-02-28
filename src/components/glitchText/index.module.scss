@@ -156,11 +156,12 @@
   font-weight: 800;
   line-height: 1;
   -webkit-text-stroke: 1px black;
-  animation:
-    glitch 1s 0.5s linear infinite,
-    expand 1s forwards;
   text-transform: uppercase;
+  animation:
+  glitch 1s 0.5s linear infinite,
+  expand 1s forwards;
 }
+
 
 .title:before,
 .title:after {

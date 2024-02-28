@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-28 09:50:43
+ * @LastEditTime: 2024-02-28 17:07:24
  * @description: default layout
 -->
 <script setup lang="ts">
@@ -41,7 +41,9 @@ onMounted(() => {
  */
 watchEffect(() => {
   if (hasLoading.value) loading.value = true
-  else loading.value = false
+  else setTimeout(() => {
+    loading.value = false
+  }, 200);
 })
 
 </script>

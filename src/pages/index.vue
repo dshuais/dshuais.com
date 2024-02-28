@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-28 15:52:49
+ * @LastEditTime: 2024-02-28 17:15:45
  * @description: index
 -->
 <script setup lang="ts">
@@ -20,19 +20,24 @@ const { hasLoading } = storeToRefs(useAppStore())
 
 onMounted(() => {
 })
+
 </script>
 <template>
   <div class="main scale-125 transition-[transform] delay-500 overflow-x-hidden" :class="{ 'zoom': !hasLoading }">
 
-    <div class="flex flex-col justify-center items-center mt-28 select-none">
-      <GlitchText class="block sm:hidden" text="Hi," type="auto"></GlitchText>
-      <GlitchText class="block sm:hidden" text="dushuai!" type="auto"></GlitchText>
-      <GlitchText class="hidden sm:block" text="Hi, dushuai!" type="auto"></GlitchText>
-    </div>
+    <div class="h-[100vh] max-w-6xl m-auto flex flex-col items-center justify-center">
+      <div class="flex flex-col justify-center items-center select-none" v-show="!hasLoading">
+        <GlitchText class="block sm:hidden" text="Hi," type="auto"></GlitchText>
+        <GlitchText class="block sm:hidden" text="dushuai!" type="auto"></GlitchText>
+        <GlitchText class="hidden sm:block" text="Hi, dushuai!" type="auto"></GlitchText>
+      </div>
 
-    <Card>
-      test
-    </Card>
+      <section class="relative w-full mx-auto mt-12">
+        <Card>
+          test
+        </Card>
+      </section>
+    </div>
 
   </div>
 </template>
