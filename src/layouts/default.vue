@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-28 18:31:18
+ * @LastEditTime: 2024-02-29 15:07:58
  * @description: default layout
 -->
 <script setup lang="ts">
@@ -48,7 +48,7 @@ watchEffect(() => {
 
 </script>
 <template>
-  <div class="fixed top-0 left-0 w-[100vw] h-[100vh] select-none">
+  <div class="fixed top-0 left-0 w-[100vw] h-[100vh] select-none text-gray-100">
     <Loading :has-loading="hasLoading" />
 
     <ClientOnly>

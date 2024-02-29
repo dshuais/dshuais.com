@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-29 14:57:42
+ * @LastEditTime: 2024-02-29 15:27:11
  * @description: index
 -->
 <script setup lang="ts">
@@ -34,8 +34,9 @@ onMounted(() => {
 
       <section class="relative w-full mx-auto mt-12 flex">
         <div class="relative flex-1 h-96 mr-24">
-          <Card :hover="false" class="w-full h-full">
+          <Card :hover="false" class="w-full h-full p-8">
             <div class="font-Pacifico">Hello World</div>
+            <div class="text-5xl font-title ml-[-1rem] mt-4">己所不欲勿施于人.</div>
           </Card>
         </div>
         <div class="relative flex-1">
