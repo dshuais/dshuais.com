@@ -21,6 +21,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.10.2",
+    "nuxt-icon": "^0.6.8",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",
     "vite": "^5.0.4",

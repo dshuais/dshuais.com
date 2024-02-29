@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2023-12-10 20:57:19
+ * @LastEditTime: 2024-02-29 16:49:43
  * @description: nuxt.config
  */
 import { loadEnv } from "vite";
@@ -39,6 +39,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
     "@nuxtjs/tailwindcss",
+    "nuxt-icon",
   ],
 
   // 配置pinia持久化 存储在session内，在store/*ts内设置无效
