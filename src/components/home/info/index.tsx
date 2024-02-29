@@ -3,15 +3,30 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-29 17:54:46
+ * @LastEditTime: 2024-02-29 18:27:52
 * @description: HomeInfo
 */
 
 import { Card, Icon, NuxtLink } from "#components"
 
+type Social = {
+  id: string,
+  type?: string,
+  path: string,
+  icon: string,
+}
+
 export default defineComponent({
   name: 'HomeInfo',
   setup() {
+
+    const socialList = ref<Social[]>([
+      { id: 'github', path: 'https://github.com/dushuai', icon: 'mdi:github' },
+      { id: 'qq', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'basil:qq-solid' },
+      { id: 'email', path: 'mailto:dsshuais2020@163.com', icon: 'ic:round-email' },
+      { id: 'juejin', path: 'https://juejin.cn/user/3158230569584056/posts', icon: 'tabler:brand-juejin' },
+    ])
+
     return () => (
       <Card hover={false} class="w-full h-full py-10">
         <div class="text-xs w-4 h-4 mb-2">
@@ -37,9 +52,14 @@ export default defineComponent({
 
         {/* 社交 */}
         <div class="w-full h-12 mt-8 flex items-center px-3 rounded-md hover:bg-[#22222240] transition-[background] duration-300">
-          <NuxtLink to={'https://github.com/dshuais'}>
-            <Icon name="akar-icons:github-fill" class="text-2xl hover:scale-125 transition-[transform] duration-300" />
-          </NuxtLink>
+
+          {
+            socialList.value ? socialList.value.map((item, index) => (
+              <NuxtLink to={item.path} target="_blank">
+                <Icon name={item.icon} class="text-3xl hover:scale-125 transition-[transform] duration-300 mr-4" />
+              </NuxtLink>
+            )) : ''
+          }
         </div>
       </Card>
     )
