@@ -3,11 +3,11 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-29 16:54:57
+ * @LastEditTime: 2024-02-29 17:54:46
 * @description: HomeInfo
 */
 
-import { Card, Icon } from "#components"
+import { Card, Icon, NuxtLink } from "#components"
 
 export default defineComponent({
   name: 'HomeInfo',
@@ -36,8 +36,10 @@ export default defineComponent({
         </div>
 
         {/* 社交 */}
-        <div class="w-full h-12 bg-red-300 mt-8 flex items-center px-3">
-          <Icon name="akar-icons:github-fill" class="w-4 h-4" />
+        <div class="w-full h-12 mt-8 flex items-center px-3 rounded-md hover:bg-[#22222240] transition-[background] duration-300">
+          <NuxtLink to={'https://github.com/dshuais'}>
+            <Icon name="akar-icons:github-fill" class="text-2xl hover:scale-125 transition-[transform] duration-300" />
+          </NuxtLink>
         </div>
       </Card>
     )
