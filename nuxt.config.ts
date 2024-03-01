@@ -24,7 +24,7 @@ const envData = loadEnv(envName, "env") as unknown as VITE_ENV_CONFIG;
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: "src",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   // 环境变量 public可在客户端useRuntimeConfig().public访问
   runtimeConfig: {

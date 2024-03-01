@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-29 16:01:31
+ * @LastEditTime: 2024-03-01 21:35:45
  * @description: index
 -->
 <script setup lang="ts">
@@ -20,6 +20,14 @@ const { hasLoading } = storeToRefs(useAppStore())
 
 onMounted(() => {
 })
+
+if (process.client) {
+  // busuanzi
+  const countScript = document.createElement('script')
+  countScript.async = true
+  countScript.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+  document.body.append(countScript)
+}
 
 </script>
 <template>

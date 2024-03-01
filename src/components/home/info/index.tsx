@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-01 17:35:35
+ * @LastEditTime: 2024-03-01 21:34:34
 * @description: HomeInfo
 */
 
@@ -73,6 +73,9 @@ export default defineComponent({
           <div class="hidden group-hover:block tracking-wider">{tip.value}</div>
 
         </div>
+
+        <div>站点数据</div>
+
       </Card>
     )
   }
