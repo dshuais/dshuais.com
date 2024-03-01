@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-29 18:27:52
+ * @LastEditTime: 2024-03-01 12:23:05
 * @description: HomeInfo
 */
 
@@ -23,6 +23,7 @@ export default defineComponent({
     const socialList = ref<Social[]>([
       { id: 'github', path: 'https://github.com/dushuai', icon: 'mdi:github' },
       { id: 'qq', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'basil:qq-solid' },
+      { id: 'wechat', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'ic:baseline-wechat', type: 'pop' },
       { id: 'email', path: 'mailto:dsshuais2020@163.com', icon: 'ic:round-email' },
       { id: 'juejin', path: 'https://juejin.cn/user/3158230569584056/posts', icon: 'tabler:brand-juejin' },
     ])
