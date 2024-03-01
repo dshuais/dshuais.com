@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-01 12:23:05
+ * @LastEditTime: 2024-03-01 17:35:35
 * @description: HomeInfo
 */
 
@@ -14,6 +14,7 @@ type Social = {
   type?: string,
   path: string,
   icon: string,
+  tip: string,
 }
 
 export default defineComponent({
@@ -21,12 +22,15 @@ export default defineComponent({
   setup() {
 
     const socialList = ref<Social[]>([
-      { id: 'github', path: 'https://github.com/dushuai', icon: 'mdi:github' },
-      { id: 'qq', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'basil:qq-solid' },
-      { id: 'wechat', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'ic:baseline-wechat', type: 'pop' },
-      { id: 'email', path: 'mailto:dsshuais2020@163.com', icon: 'ic:round-email' },
-      { id: 'juejin', path: 'https://juejin.cn/user/3158230569584056/posts', icon: 'tabler:brand-juejin' },
+      { id: 'github', path: 'https://github.com/dushuai', icon: 'mdi:github', tip: '去GitHub看看~' },
+      { id: 'qq', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'basil:qq-solid', tip: '一起玩局游戏吧' },
+      { id: 'wechat', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'ic:baseline-wechat', type: 'pop', tip: '有什么事吗' },
+      { id: 'wechat-public', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'mingcute:wechat-miniprogram-fill', type: 'pop', tip: '订阅走起~' },
+      { id: 'email', path: 'mailto:dsshuais2020@163.com', icon: 'ic:round-email', tip: '来一封Email~' },
+      { id: 'juejin', path: 'https://juejin.cn/user/3158230569584056/posts', icon: 'tabler:brand-juejin', tip: '前排围观~' },
     ])
+
+    const tip = ref<string>('通过这里找到我！')
 
     return () => (
       <Card hover={false} class="w-full h-full py-10">
@@ -52,15 +56,22 @@ export default defineComponent({
         </div>
 
         {/* 社交 */}
-        <div class="w-full h-12 mt-8 flex items-center px-3 rounded-md hover:bg-[#22222240] transition-[background] duration-300">
+        <div class="group w-full h-12 mt-8 flex items-center justify-between px-3 rounded-md hover:bg-[#22222240] transition-[background] duration-300">
 
-          {
-            socialList.value ? socialList.value.map((item, index) => (
-              <NuxtLink to={item.path} target="_blank">
-                <Icon name={item.icon} class="text-3xl hover:scale-125 transition-[transform] duration-300 mr-4" />
-              </NuxtLink>
-            )) : ''
-          }
+          <div>
+            {
+              socialList.value ? socialList.value.map((item, index) => (
+                <div class="inline-block" onMouseenter={_ => tip.value = item.tip} onMouseleave={_ => tip.value = '通过这里找到我！'}>
+                  <NuxtLink to={item.path} target="_blank">
+                    <Icon name={item.icon} class="text-3xl hover:scale-125 transition-[transform] duration-300 mr-4" />
+                  </NuxtLink>
+                </div>
+              )) : ''
+            }
+          </div>
+
+          <div class="hidden group-hover:block tracking-wider">{tip.value}</div>
+
         </div>
       </Card>
     )
