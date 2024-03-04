@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-04 17:39:54
+ * @LastEditTime: 2024-03-04 18:18:38
 * @description: HomeInfo
 */
 
@@ -56,7 +56,7 @@ export default defineComponent({
         </div>
 
         {/* 社交 */}
-        <div class="group w-full h-12 mt-8 flex items-center justify-between px-3 rounded-md hover:bg-[#22222240] transition-[background] duration-300">
+        <div class="group w-full h-12 mt-6 flex items-center justify-between px-3 rounded-md hover:bg-[#22222240] transition-[background] duration-300">
 
           <div>
             {
@@ -89,7 +89,22 @@ export default defineComponent({
 
         </div>
 
-        <div class="font-Pacifico">站点数据</div>
+        <div class="mt-4 text-sm text-gray-300 flex items-center"><Icon name="material-symbols:table-chart-view-rounded" class="text-sm mr-1" />站点数据</div>
+
+        <div class="w-56 text-sm ml-2 text-gray-300">
+          <div class="flex items-center justify-between mt-2">
+            <div class="flex items-center"><Icon name="material-symbols:calendar-today" class="mr-1" />本站已运行</div>
+            <div>1000天</div>
+          </div>
+          <div class="flex items-center justify-between mt-1">
+            <div class="flex items-center"><Icon name="material-symbols:visibility" class="mr-1" />总pv</div>
+            <div id="busuanzi_value_site_pv" class="after:content-['次']"></div>
+          </div>
+          <div class="flex items-center justify-between mt-1">
+            <div class="flex items-center"><Icon name="material-symbols:group-rounded" class="mr-1" />总uv</div>
+            <div id="busuanzi_value_site_uv" class="after:content-['人']"></div>
+          </div>
+        </div>
 
       </Card>
     )
