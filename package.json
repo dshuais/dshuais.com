@@ -26,6 +26,8 @@
     "sass": "^1.69.5",
     "vite": "^5.0.4",
     "vue": "^3.4.19",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vuetify": "^3.5.7",
+    "vuetify-nuxt-module": "^0.12.0"
   }
 }
