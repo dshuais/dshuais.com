@@ -3,11 +3,11 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-01 21:34:34
+ * @LastEditTime: 2024-03-04 17:04:57
 * @description: HomeInfo
 */
 
-import { Card, Icon, NuxtLink } from "#components"
+import { Card, Icon, NuxtImg, NuxtLink, UTooltip } from "#components"
 
 type Social = {
   id: string,
@@ -24,8 +24,8 @@ export default defineComponent({
     const socialList = ref<Social[]>([
       { id: 'github', path: 'https://github.com/dushuai', icon: 'mdi:github', tip: '去GitHub看看~' },
       { id: 'qq', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'basil:qq-solid', tip: '一起玩局游戏吧' },
-      { id: 'wechat', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'ic:baseline-wechat', type: 'pop', tip: '有什么事吗' },
-      { id: 'wechat-public', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'mingcute:wechat-miniprogram-fill', type: 'pop', tip: '订阅走起~' },
+      { id: 'wechat', path: '', icon: 'ic:baseline-wechat', type: 'pop', tip: '有什么事吗' },
+      { id: 'wechat-public', path: '', icon: 'mingcute:wechat-miniprogram-fill', type: 'pop', tip: '订阅走起~' },
       { id: 'email', path: 'mailto:dsshuais2020@163.com', icon: 'ic:round-email', tip: '来一封Email~' },
       { id: 'juejin', path: 'https://juejin.cn/user/3158230569584056/posts', icon: 'tabler:brand-juejin', tip: '前排围观~' },
     ])
@@ -62,9 +62,24 @@ export default defineComponent({
             {
               socialList.value ? socialList.value.map((item, index) => (
                 <div class="inline-block" onMouseenter={_ => tip.value = item.tip} onMouseleave={_ => tip.value = '通过这里找到我！'}>
-                  <NuxtLink to={item.path} target="_blank">
-                    <Icon name={item.icon} class="text-3xl hover:scale-125 transition-[transform] duration-300 mr-4" />
-                  </NuxtLink>
+                  {
+                    item.type === 'pop' ?
+                      <UTooltip popper={{ arrow: true, placement: 'top' }} ui={{ "base": 'p-1 h-full' }} v-slots={{
+                        text: () => (
+                          <div class="w-36 h-full">
+                            <NuxtImg src="https://files.dshuais.com/images/wallpaper/0.png" />
+                          </div>
+                        )
+                      }}>
+                        <NuxtLink>
+                          <Icon name={item.icon} class="text-3xl hover:scale-125 transition-[transform] duration-300 mr-4" />
+                        </NuxtLink>
+                      </UTooltip>
+                      :
+                      <NuxtLink to={item.path} target="_blank">
+                        <Icon name={item.icon} class="text-3xl hover:scale-125 transition-[transform] duration-300 mr-4" />
+                      </NuxtLink>
+                  }
                 </div>
               )) : ''
             }
