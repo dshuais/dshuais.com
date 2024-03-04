@@ -157,9 +157,24 @@
   line-height: 1;
   -webkit-text-stroke: 1px black;
   text-transform: uppercase;
-  animation:
-  glitch 1s 0.5s linear infinite,
-  expand 1s forwards;
+  // animation:
+  // glitch 1s 0.5s linear infinite,
+  // expand 1s forwards;
+  animation: expand 1s forwards;
+
+  &:hover {
+    animation: glitch 1s 0.5s linear infinite, expand 1s forwards;
+  }
+
+  &:hover:before {
+    animation: glitchTop 1s 0.5s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+
+   &:hover:after {
+    animation: glitchBotom 1.5s 0.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
 }
 
 
@@ -170,15 +185,15 @@
   left: 0;
 }
 
-.title:before {
-  animation: glitchTop 1s 0.5s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
+// .title:before {
+//   animation: glitchTop 1s 0.5s linear infinite;
+//   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+// }
 
-.title:after {
-  animation: glitchBotom 1.5s 0.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
+// .title:after {
+//   animation: glitchBotom 1.5s 0.5s linear infinite;
+//   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+// }
 
 @keyframes expand {
   to {
