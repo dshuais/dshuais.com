@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-04 17:04:57
+ * @LastEditTime: 2024-03-04 17:39:54
 * @description: HomeInfo
 */
 
@@ -89,7 +89,7 @@ export default defineComponent({
 
         </div>
 
-        <div>站点数据</div>
+        <div class="font-Pacifico">站点数据</div>
 
       </Card>
     )
