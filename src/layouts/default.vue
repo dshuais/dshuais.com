@@ -2,9 +2,10 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-29 15:07:58
+ * @LastEditTime: 2024-03-04 15:28:48
  * @description: default layout
 -->
+
 <script setup lang="ts">
 import { useAppStore } from '~/store';
 
@@ -47,6 +48,7 @@ watchEffect(() => {
 })
 
 </script>
+
 <template>
   <div class="fixed top-0 left-0 w-[100vw] h-[100vh] select-none text-gray-100">
     <Loading :has-loading="hasLoading" />
@@ -56,5 +58,8 @@ watchEffect(() => {
     </ClientOnly>
 
     <slot />
+
+    <UNotifications />
+
   </div>
 </template>

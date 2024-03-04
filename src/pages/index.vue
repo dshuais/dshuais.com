@@ -2,11 +2,13 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-01 21:35:45
+ * @LastEditTime: 2024-03-04 16:02:35
  * @description: index
 -->
+
 <script setup lang="ts">
 import { useAppStore } from '~/store';
+const { showMessage } = useNotification()
 
 useHead({
   // title: '我的应用',
@@ -21,6 +23,11 @@ const { hasLoading } = storeToRefs(useAppStore())
 onMounted(() => {
 })
 
+
+function handleClick() {
+  showMessage('hello world!')
+}
+
 if (process.client) {
   // busuanzi
   const countScript = document.createElement('script')
@@ -30,6 +37,7 @@ if (process.client) {
 }
 
 </script>
+
 <template>
   <div class="main scale-125 transition-[transform] delay-500 overflow-x-hidden" :class="{ 'zoom': !hasLoading }">
 
@@ -51,6 +59,7 @@ if (process.client) {
           </div>
           <div class="mt-8 mb-4">
             网站列表
+            <UButton label="Show toast" @click="handleClick" />
           </div>
         </div>
       </section>

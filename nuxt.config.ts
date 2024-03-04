@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-04 14:14:43
+ * @LastEditTime: 2024-03-04 15:28:28
  * @description: nuxt.config
  */
 import { loadEnv } from "vite";
@@ -24,7 +24,7 @@ const envData = loadEnv(envName, "env") as unknown as VITE_ENV_CONFIG;
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: "src",
-  devtools: { enabled: false },
+  devtools: { enabled: true },
 
   // 环境变量 public可在客户端useRuntimeConfig().public访问
   runtimeConfig: {
