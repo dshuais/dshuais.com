@@ -3,11 +3,11 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-04 18:18:38
+ * @LastEditTime: 2024-03-05 10:36:35
 * @description: HomeInfo
 */
 
-import { Card, Icon, NuxtImg, NuxtLink, UTooltip } from "#components"
+import { Card, Icon, NuxtImg, NuxtLink, UButton, UTooltip } from "#components"
 
 type Social = {
   id: string,
@@ -22,7 +22,7 @@ export default defineComponent({
   setup() {
 
     const socialList = ref<Social[]>([
-      { id: 'github', path: 'https://github.com/dushuai', icon: 'mdi:github', tip: '去GitHub看看~' },
+      { id: 'github', path: 'https://github.com/dshuais', icon: 'mdi:github', tip: '去GitHub看看~' },
       { id: 'qq', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'basil:qq-solid', tip: '一起玩局游戏吧' },
       { id: 'wechat', path: '', icon: 'ic:baseline-wechat', type: 'pop', tip: '有什么事吗' },
       { id: 'wechat-public', path: '', icon: 'mingcute:wechat-miniprogram-fill', type: 'pop', tip: '订阅走起~' },
@@ -31,6 +31,14 @@ export default defineComponent({
     ])
 
     const tip = ref<string>('通过这里找到我！')
+
+    function handleWallpaper(type: 'random' | 'settings') {
+      if (type === 'random') {
+        console.log('随机一张')
+      } else {
+        console.log('打开弹窗')
+      }
+    }
 
     return () => (
       <Card hover={false} class="w-full h-full py-10">
@@ -89,20 +97,54 @@ export default defineComponent({
 
         </div>
 
-        <div class="mt-4 text-sm text-gray-300 flex items-center"><Icon name="material-symbols:table-chart-view-rounded" class="text-sm mr-1" />站点数据</div>
 
-        <div class="w-56 text-sm ml-2 text-gray-300">
-          <div class="flex items-center justify-between mt-2">
-            <div class="flex items-center"><Icon name="material-symbols:calendar-today" class="mr-1" />本站已运行</div>
-            <div>1000天</div>
+
+        <div class="flex justify-between mt-6">
+          <div class="flex-1 mr-12">
+            <div class="text-sm text-gray-300 flex items-center"><Icon name="material-symbols:table-chart-view-rounded" class="text-sm mr-1" />站点数据</div>
+            <div class="text-xs ml-2 text-gray-300">
+              <div class="flex items-center justify-between mt-3">
+                <div class="flex items-center"><Icon name="material-symbols:calendar-today" class="mr-1" />本站已运行</div>
+                <div>1000天</div>
+              </div>
+              <div class="flex items-center justify-between mt-1">
+                <div class="flex items-center"><Icon name="material-symbols:visibility" class="mr-1" />总访问次数</div>
+                <div id="busuanzi_value_site_pv" class="after:content-['次']"></div>
+              </div>
+              <div class="flex items-center justify-between mt-1">
+                <div class="flex items-center"><Icon name="material-symbols:group-rounded" class="mr-1" />总访问人数</div>
+                <div id="busuanzi_value_site_uv" class="after:content-['人']"></div>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center justify-between mt-1">
-            <div class="flex items-center"><Icon name="material-symbols:visibility" class="mr-1" />总pv</div>
-            <div id="busuanzi_value_site_pv" class="after:content-['次']"></div>
-          </div>
-          <div class="flex items-center justify-between mt-1">
-            <div class="flex items-center"><Icon name="material-symbols:group-rounded" class="mr-1" />总uv</div>
-            <div id="busuanzi_value_site_uv" class="after:content-['人']"></div>
+
+          <div class="flex-1">
+            <div class="text-sm text-gray-300 flex items-center"><Icon name="material-symbols:settings-rounded" class="text-sm mr-1" />系统设置</div>
+            <div class="text-xs ml-2 text-gray-300">
+              <div class="flex items-center justify-between mt-3">
+                <div class="flex items-center"><Icon name="material-symbols:background-dot-small" class="mr-1" />壁纸设置</div>
+                <div class="text-xl flex items-center">
+                  <UTooltip popper={{ arrow: true, placement: 'top' }} text="随机一张" class="mr-3">
+                    <div onClick={_ => handleWallpaper('random')}>
+                      <Icon name="fe:random" />
+                    </div>
+                  </UTooltip>
+                  <UTooltip popper={{ arrow: true, placement: 'top' }} text="自定义">
+                    <div onClick={_ => handleWallpaper('settings')}>
+                      <Icon name="material-symbols:lists-rounded" />
+                    </div>
+                  </UTooltip>
+                </div>
+              </div>
+              {/* <div class="flex items-center justify-between mt-1">
+                <div class="flex items-center"><Icon name="material-symbols:visibility" class="mr-1" />总访问次数</div>
+                <div id="busuanzi_value_site_pv" class="after:content-['次']"></div>
+              </div>
+              <div class="flex items-center justify-between mt-1">
+                <div class="flex items-center"><Icon name="material-symbols:group-rounded" class="mr-1" />总访问人数</div>
+                <div id="busuanzi_value_site_uv" class="after:content-['人']"></div>
+              </div> */}
+            </div>
           </div>
         </div>
 
