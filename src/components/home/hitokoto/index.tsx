@@ -2,28 +2,42 @@
  * @Author: dushuai
  * @Date: 2024-02-29 16:00:48
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 16:44:02
+ * @LastEditTime: 2024-03-05 18:23:18
  * @description: homeHitokoto
  */
 import Card from "~/components/card"
 import { getHitokoto } from '~/api'
 
+type Hitokoto = {
+  hitokoto: string,
+  from: string,
+}
+
 export default defineComponent({
   name: 'HomeHitokoto',
   setup() {
 
+    const hitokoto = ref<Hitokoto>({
+      hitokoto: '己所不欲勿施于人',
+      from: 'dushuai',
+    })
+
     function getData() {
       getHitokoto()
         .then(res => {
-          console.log('res', res)
+          hitokoto.value = {
+            hitokoto: res.hitokoto,
+            from: res.from,
+          }
         })
     }
 
     getData()
 
     return () => (
-      <Card class="w-full h-full flex items-center justify-center lg:mr-6">
-        homeHitokoto
+      <Card class="w-full h-full flex items-center justify-center flex-col lg:mr-6 py-10 px-6" onClick={getData}>
+        <div class="text-gray-100 w-full flex justify-start">{hitokoto.value.hitokoto}</div>
+        <div class="w-full font-bold flex justify-end mt-4 font-content">-「 {hitokoto.value.from} 」</div>
       </Card>
     )
   }

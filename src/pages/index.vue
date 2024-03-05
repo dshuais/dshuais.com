@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 16:47:06
+ * @LastEditTime: 2024-03-05 18:23:55
  * @description: index
 -->
 
@@ -14,7 +14,7 @@ useHead({
   // title: '我的应用',
   // titleTemplate: '%s - dshuais',
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - dshuais` : 'dshuais'
+    return titleChunk ? `${titleChunk} - DUSHUAI!` : 'DUSHUAI!'
   }
 })
 
@@ -55,7 +55,9 @@ if (process.client) {
         </div>
         <div class="relative flex-1 mt-4 lg:mt-0 ml-0 lg:ml-16">
           <div class="flex items-center justify-between flex-col lg:flex-row">
-            <HomeHitokoto />
+            <ClientOnly>
+              <HomeHitokoto />
+            </ClientOnly>
             <HomeTime class="mt-4 lg:mt-0" />
           </div>
           <div class="mt-8 mb-4">
