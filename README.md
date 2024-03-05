@@ -1,75 +1,16 @@
-# Nuxt 3 Minimal Starter
+# dshuais
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The home page of my site.
 
-## Setup
+> 官网地址：[https://www.dshuais.com/](https://www.dshuais.com/)
 
-Make sure to install the dependencies:
+### 技术栈
 
-```bash
-# npm
-npm install
+本站主要采用Nuxt+Typescript+tsx+Pinia+Tailwindcss等技术栈构建。
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+* [Nuxt](https://nuxt.com/)
+* [Vue](https://cn.vuejs.org/)
+* [Vite](https://vitejs.cn/vite3-cn/)
+* [Pinia](https://pinia.vuejs.org/zh/)
+* [Tailwindcss](https://www.tailwindcss.cn/)
+* [Icones](https://icones.js.org/)
