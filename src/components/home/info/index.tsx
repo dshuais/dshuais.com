@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 16:31:06
+ * @LastEditTime: 2024-03-05 16:46:26
 * @description: HomeInfo
 */
 
@@ -88,7 +88,7 @@ export default defineComponent({
             </svg>
           </div>
           <div class="font-Pacifico pl-8">Hello World</div>
-          <div class="text-5xl font-title ml-[-1rem] mt-4 pl-3">己所不欲勿施于人.</div>
+          <div class="text-5xl font-title ml-[-1rem] mt-4 pl-8">己所不欲勿施于人.</div>
           <div class="w-full flex justify-end">
             <div class="text-xs w-4 h-4 relative right-0 mt-2">
               <svg data-v-03d4b6aa="" xmlns="http://www.w3.org/2000/svg" xmlnsXlink={'http://www.w3.org/1999/xlink'}

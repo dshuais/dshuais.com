@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 16:30:09
+ * @LastEditTime: 2024-03-05 16:47:06
  * @description: index
 -->
 
@@ -40,7 +40,7 @@ if (process.client) {
 <template>
   <div class="main scale-125 transition-[transform] delay-500 overflow-x-hidden" :class="{ 'zoom': zoom }">
 
-    <div class="h-[100vh] max-w-6xl m-auto flex flex-col items-center lg:justify-center px-4 lg:px-0 pt-32 lg:pt-0">
+    <div class="h-[100vh] max-w-[76rem] m-auto flex flex-col items-center lg:justify-center px-4 lg:px-0 pt-32 lg:pt-0">
       <div class="flex flex-col justify-center items-center select-none" v-show="zoom">
         <GlitchText class="block sm:hidden" text="Hi," type="auto"></GlitchText>
         <GlitchText class="block sm:hidden" text="dushuai!" type="auto"></GlitchText>
@@ -53,10 +53,10 @@ if (process.client) {
             <HomeInfo />
           </ClientOnly>
         </div>
-        <div class="relative flex-1 mt-4 lg:mt-0 ml-0 lg:ml-24">
-          <div class="flex items-center justify-between">
+        <div class="relative flex-1 mt-4 lg:mt-0 ml-0 lg:ml-16">
+          <div class="flex items-center justify-between flex-col lg:flex-row">
             <HomeHitokoto />
-            <HomeTime />
+            <HomeTime class="mt-4 lg:mt-0" />
           </div>
           <div class="mt-8 mb-4">
             网站列表
