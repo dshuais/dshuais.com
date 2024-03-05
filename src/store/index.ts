@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-24 22:25:03
+ * @LastEditTime: 2024-03-05 12:29:16
  * @description: store
  */
 
@@ -10,6 +10,7 @@ export const useAppStore = defineStore('app', () => {
   // state
   const token = ref<string>('')
   const hasLoading = ref<boolean>(true)
+  const zoom = ref<boolean>(false)
 
   // action
   /** 
@@ -28,7 +29,7 @@ export const useAppStore = defineStore('app', () => {
   }
 
   return {
-    token, hasLoading,
+    token, hasLoading, zoom,
     SET_TOKEN, REMOVE_TOKEN
   }
 }, {

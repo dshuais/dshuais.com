@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 17:02:58
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-22 12:16:39
+ * @LastEditTime: 2024-03-05 11:24:01
  * @description: Loading
  */
 type Props = {
@@ -28,7 +28,7 @@ export default defineComponent({
             <span class='name'>
               {env.public.VITE_SITE_NAME}
             </span>
-            <span class='tip'> 加载中 </span>
+            <span class='tip'> loading... </span>
           </div>
         </div>
         <div class='loader-section section-left' />

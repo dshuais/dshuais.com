@@ -3,11 +3,12 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 11:15:35
+ * @LastEditTime: 2024-03-05 14:36:53
 * @description: HomeInfo
 */
 
 import { Card, Icon, NuxtImg, NuxtLink, UButton, UTooltip } from "#components"
+import { useAppStore } from "~/store"
 
 type Social = {
   id: string,
@@ -24,8 +25,8 @@ export default defineComponent({
     const socialList = ref<Social[]>([
       { id: 'github', path: 'https://github.com/dshuais', icon: 'mdi:github', tip: '去GitHub看看~' },
       { id: 'qq', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'basil:qq-solid', tip: '一起玩局游戏吧' },
-      { id: 'wechat', path: '', icon: 'ic:baseline-wechat', type: 'pop', tip: '有什么事吗' },
-      { id: 'wechat-public', path: '', icon: 'mingcute:wechat-miniprogram-fill', type: 'pop', tip: '订阅走起~' },
+      { id: 'wechat', path: 'https://files.dshuais.com/images/my/wechat.png', icon: 'ic:baseline-wechat', type: 'pop', tip: '有什么事吗' },
+      { id: 'wechat-public', path: 'https://files.dshuais.com/images/my/wechat-official.png', icon: 'mingcute:wechat-miniprogram-fill', type: 'pop', tip: '订阅走起~' },
       { id: 'email', path: 'mailto:dsshuais2020@163.com', icon: 'ic:round-email', tip: '来一封Email~' },
       { id: 'juejin', path: 'https://juejin.cn/user/3158230569584056/posts', icon: 'tabler:brand-juejin', tip: '前排围观~' },
     ])
@@ -34,10 +35,38 @@ export default defineComponent({
 
     function handleWallpaper(type: 'random' | 'settings') {
       if (type === 'random') {
-        console.log('随机一张')
+        randomWallpaper()
       } else {
         console.log('打开弹窗')
       }
+    }
+
+    const { wallpaperUrl, wallpaper, wallpapers, setWallpaperUrl, setWallpaper } = useWallpaper()
+
+    /**
+     * 随机壁纸
+     */
+    const { hasLoading } = storeToRefs(useAppStore())
+
+    function randomWallpaper() {
+      const index = Math.floor(Math.random() * wallpapers.value)
+      const url = `https://files.dshuais.com/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
+      setWallpaper('auto', url)
+
+      hasLoading.value = true
+      loadImg().then(_ => {
+        hasLoading.value = false
+      })
+    }
+
+    function loadImg() {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.src = wallpaperUrl.value;
+        image.onload = () => {
+          resolve(true)
+        }
+      })
     }
 
     function openTimeCapsule() {
@@ -81,7 +110,7 @@ export default defineComponent({
                       <UTooltip popper={{ arrow: true, placement: 'top' }} ui={{ "base": 'p-1 h-full' }} v-slots={{
                         text: () => (
                           <div class="w-36 h-full">
-                            <NuxtImg src="https://files.dshuais.com/images/wallpaper/0.png" />
+                            <NuxtImg src={item.path} />
                           </div>
                         )
                       }}>

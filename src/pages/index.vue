@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 11:20:56
+ * @LastEditTime: 2024-03-05 12:29:41
  * @description: index
 -->
 
@@ -18,7 +18,7 @@ useHead({
   }
 })
 
-const { hasLoading } = storeToRefs(useAppStore())
+const { zoom } = storeToRefs(useAppStore())
 
 onMounted(() => {
 })
@@ -39,10 +39,10 @@ if (process.client) {
 </script>
 
 <template>
-  <div class="main scale-125 transition-[transform] delay-500 overflow-x-hidden" :class="{ 'zoom': !hasLoading }">
+  <div class="main scale-125 transition-[transform] delay-500 overflow-x-hidden" :class="{ 'zoom': zoom }">
 
     <div class="h-[100vh] max-w-6xl m-auto flex flex-col items-center justify-center">
-      <div class="flex flex-col justify-center items-center select-none" v-show="!hasLoading">
+      <div class="flex flex-col justify-center items-center select-none" v-show="zoom">
         <GlitchText class="block sm:hidden" text="Hi," type="auto"></GlitchText>
         <GlitchText class="block sm:hidden" text="dushuai!" type="auto"></GlitchText>
         <GlitchText class="hidden sm:block" text="Hi, dushuai!" type="auto"></GlitchText>

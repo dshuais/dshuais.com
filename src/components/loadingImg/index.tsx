@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-28 09:51:52
+ * @LastEditTime: 2024-03-05 12:17:35
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -53,12 +53,11 @@ export default defineComponent({
       bg.value?.style.setProperty('--img', `url('${wallpaperUrl.value}')`)
     }
 
+    // initImg()
 
-    initImg()
-
-    onMounted(() => {
-      setImg()
-    })
+    // onMounted(() => {
+    //   setImg()
+    // })
 
     watchEffect(() => {
       if (!props.hasLoading) {
@@ -66,6 +65,16 @@ export default defineComponent({
         setTimeout(() => {
           len.value = 0
         }, 2000);
+      } else {
+        bg.value?.style.setProperty('--o', '1')
+        initImg()
+      }
+    })
+
+    watchEffect(() => {
+      if (wallpaperUrl.value) {
+        console.log('已修改')
+        setImg()
       }
     })
 

@@ -2,15 +2,15 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-04 15:28:48
+ * @LastEditTime: 2024-03-05 14:33:57
  * @description: default layout
 -->
 
 <script setup lang="ts">
 import { useAppStore } from '~/store';
 
-const { hasLoading: loading } = storeToRefs(useAppStore())
-const hasLoading = ref(true);
+const { hasLoading, zoom } = storeToRefs(useAppStore())
+const loading = ref(true);
 
 const { wallpaperUrl, wallpaper, wallpapers, setWallpaperUrl } = useWallpaper()
 
@@ -25,7 +25,11 @@ function initImg() {
   }
 }
 
+ThisLog()
+
 initImg()
+
+hasLoading.value = true;
 
 onMounted(() => {
   if (process.client) {
@@ -41,20 +45,26 @@ onMounted(() => {
  * 监听只是为了更新 存在storage内的状态 以供之后使用 暂无作用
  */
 watchEffect(() => {
-  if (hasLoading.value) loading.value = true
-  else setTimeout(() => {
+  if (hasLoading.value) {
+    loading.value = true
+    zoom.value = false
+  } else {
     loading.value = false
-  }, 200);
+
+    setTimeout(() => {
+      zoom.value = true
+    }, 300);
+  }
 })
 
 </script>
 
 <template>
   <div class="fixed top-0 left-0 w-[100vw] h-[100vh] select-none text-gray-100">
-    <Loading :has-loading="hasLoading" />
+    <Loading :has-loading="loading" />
 
     <ClientOnly>
-      <LoadingImg :has-loading="hasLoading" />
+      <LoadingImg :has-loading="loading" />
     </ClientOnly>
 
     <slot />
