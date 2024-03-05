@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-26 12:19:08
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 12:17:35
+ * @LastEditTime: 2024-03-05 15:21:08
  * @description: 开屏图片加载
  */
 import styles from './index.module.scss'
@@ -73,7 +73,6 @@ export default defineComponent({
 
     watchEffect(() => {
       if (wallpaperUrl.value) {
-        console.log('已修改')
         setImg()
       }
     })

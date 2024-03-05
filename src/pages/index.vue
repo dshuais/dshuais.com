@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 12:29:41
+ * @LastEditTime: 2024-03-05 15:57:05
  * @description: index
 -->
 
@@ -22,7 +22,6 @@ const { zoom } = storeToRefs(useAppStore())
 
 onMounted(() => {
 })
-
 
 function handleClick() {
   showMessage('hello world!')

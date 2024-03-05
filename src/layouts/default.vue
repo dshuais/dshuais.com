@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 14:33:57
+ * @LastEditTime: 2024-03-05 16:06:34
  * @description: default layout
 -->
 
@@ -13,6 +13,8 @@ const { hasLoading, zoom } = storeToRefs(useAppStore())
 const loading = ref(true);
 
 const { wallpaperUrl, wallpaper, wallpapers, setWallpaperUrl } = useWallpaper()
+
+const { showMessage } = useNotification()
 
 /**
  * 优先初始化图片 防止new Image加载之前的缓存图片
@@ -53,9 +55,28 @@ watchEffect(() => {
 
     setTimeout(() => {
       zoom.value = true
+      setTimeout(() => {
+        showMessage(` <b style="color:#fff;">${dateHourTip()}</b> 欢迎访问我的主页`)
+      }, 1200);
     }, 300);
   }
 })
+
+
+function dateHourTip(): string {
+  const hour = new Date().getHours()
+  if (hour >= 6 && hour < 8) {
+    return '早上好'
+  } else if (hour >= 8 && hour < 11) {
+    return '上午好'
+  } else if (hour >= 11 && hour < 13) {
+    return '中午好'
+  } else if (hour >= 13 && hour < 18) {
+    return '下午好'
+  } else {
+    return '晚上好'
+  }
+}
 
 </script>
 
@@ -69,7 +90,11 @@ watchEffect(() => {
 
     <slot />
 
-    <UNotifications />
+    <UNotifications>
+      <template #title="{ title }">
+        <span v-html="title" />
+      </template>
+    </UNotifications>
 
   </div>
 </template>

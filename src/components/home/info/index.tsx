@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 14:36:53
+ * @LastEditTime: 2024-03-05 15:22:40
 * @description: HomeInfo
 */
 
@@ -33,11 +33,14 @@ export default defineComponent({
 
     const tip = ref<string>('通过这里找到我！')
 
+    const { showMessage } = useNotification()
+
     function handleWallpaper(type: 'random' | 'settings') {
       if (type === 'random') {
         randomWallpaper()
       } else {
-        console.log('打开弹窗')
+        // console.log('打开弹窗')
+        showMessage('功能正在开发中...')
       }
     }
 
