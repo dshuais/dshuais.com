@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 10:36:35
+ * @LastEditTime: 2024-03-05 11:15:35
 * @description: HomeInfo
 */
 
@@ -40,26 +40,32 @@ export default defineComponent({
       }
     }
 
+    function openTimeCapsule() {
+      console.log('打开时光胶囊')
+    }
+
     return () => (
       <Card hover={false} class="w-full h-full py-10">
-        <div class="text-xs w-4 h-4 mb-2">
-          <svg data-v-03d4b6aa="" xmlns="http://www.w3.org/2000/svg" xmlnsXlink={'http://www.w3.org/1999/xlink'}
-            viewBox="0 0 512 512">
-            <path
-              d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-              fill="currentColor"></path>
-          </svg>
-        </div>
-        <div class="font-Pacifico pl-8">Hello World</div>
-        <div class="text-5xl font-title ml-[-1rem] mt-4 pl-3">己所不欲勿施于人.</div>
-        <div class="w-full flex justify-end">
-          <div class="text-xs w-4 h-4 relative right-0 mt-2">
+        <div onClick={openTimeCapsule}>
+          <div class="text-xs w-4 h-4 mb-2">
             <svg data-v-03d4b6aa="" xmlns="http://www.w3.org/2000/svg" xmlnsXlink={'http://www.w3.org/1999/xlink'}
               viewBox="0 0 512 512">
               <path
-                d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"
+                d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
                 fill="currentColor"></path>
             </svg>
+          </div>
+          <div class="font-Pacifico pl-8">Hello World</div>
+          <div class="text-5xl font-title ml-[-1rem] mt-4 pl-3">己所不欲勿施于人.</div>
+          <div class="w-full flex justify-end">
+            <div class="text-xs w-4 h-4 relative right-0 mt-2">
+              <svg data-v-03d4b6aa="" xmlns="http://www.w3.org/2000/svg" xmlnsXlink={'http://www.w3.org/1999/xlink'}
+                viewBox="0 0 512 512">
+                <path
+                  d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"
+                  fill="currentColor"></path>
+              </svg>
+            </div>
           </div>
         </div>
 
@@ -97,15 +103,13 @@ export default defineComponent({
 
         </div>
 
-
-
         <div class="flex justify-between mt-6">
           <div class="flex-1 mr-12">
             <div class="text-sm text-gray-300 flex items-center"><Icon name="material-symbols:table-chart-view-rounded" class="text-sm mr-1" />站点数据</div>
             <div class="text-xs ml-2 text-gray-300">
               <div class="flex items-center justify-between mt-3">
                 <div class="flex items-center"><Icon name="material-symbols:calendar-today" class="mr-1" />本站已运行</div>
-                <div>1000天</div>
+                <div>{dateInterval('2022-06-28').days}天</div>
               </div>
               <div class="flex items-center justify-between mt-1">
                 <div class="flex items-center"><Icon name="material-symbols:visibility" class="mr-1" />总访问次数</div>
@@ -125,12 +129,12 @@ export default defineComponent({
                 <div class="flex items-center"><Icon name="material-symbols:background-dot-small" class="mr-1" />壁纸设置</div>
                 <div class="text-xl flex items-center">
                   <UTooltip popper={{ arrow: true, placement: 'top' }} text="随机一张" class="mr-3">
-                    <div onClick={_ => handleWallpaper('random')}>
+                    <div onClick={withModifiers(_ => handleWallpaper('random'), ['stop'])}>
                       <Icon name="fe:random" />
                     </div>
                   </UTooltip>
                   <UTooltip popper={{ arrow: true, placement: 'top' }} text="自定义">
-                    <div onClick={_ => handleWallpaper('settings')}>
+                    <div onClick={withModifiers(_ => handleWallpaper('settings'), ['stop'])}>
                       <Icon name="material-symbols:lists-rounded" />
                     </div>
                   </UTooltip>

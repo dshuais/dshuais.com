@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-04 16:02:35
+ * @LastEditTime: 2024-03-05 11:20:56
  * @description: index
 -->
 
@@ -50,7 +50,9 @@ if (process.client) {
 
       <section class="relative w-full mx-auto mt-12 flex">
         <div class="relative flex-1 h-96 mr-24">
-          <HomeInfo />
+          <ClientOnly>
+            <HomeInfo />
+          </ClientOnly>
         </div>
         <div class="relative flex-1">
           <div class="flex items-center justify-between">

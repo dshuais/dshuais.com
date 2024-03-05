@@ -365,3 +365,30 @@ export const ThisLog = () => (
     "padding: 2px 1px; border-radius: 0 3px 3px 0; color: #fff; background: skyblue; font-weight: bold;"
   )
 );
+
+
+type DateInterval = {
+  info: string;
+  days: number;
+}
+
+/**
+ * 获取固定时间到现在间隔
+ * @param date 开始日期
+ * @returns {DateInterval}
+ */
+export function dateInterval(date: string): DateInterval {
+  let startTime = new Date(date).getTime(); // 开始时间
+  let endTime = new Date().getTime(); // 结束时间
+  let usedTime = endTime - startTime; // 相差的毫秒数
+  let days = Math.floor(usedTime / (24 * 3600 * 1000)); // 计算出天数
+  let leavel = usedTime % (24 * 3600 * 1000); // 计算天数后剩余的时间
+  let hours = Math.floor(leavel / (3600 * 1000)); // 计算剩余的小时数
+  let leavel2 = leavel % (3600 * 1000); // 计算剩余小时后剩余的毫秒数
+  let minutes = Math.floor(leavel2 / (60 * 1000)); // 计算剩余的分钟数
+
+  return {
+    info: days + '天' + hours + '时' + minutes + '分',
+    days,
+  }
+}
