@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 15:22:40
+ * @LastEditTime: 2024-03-05 16:31:06
 * @description: HomeInfo
 */
 
@@ -77,7 +77,7 @@ export default defineComponent({
     }
 
     return () => (
-      <Card hover={false} class="w-full h-full py-10">
+      <Card hover={false} class="w-full h-full pt-10 pb-6">
         <div onClick={openTimeCapsule}>
           <div class="text-xs w-4 h-4 mb-2">
             <svg data-v-03d4b6aa="" xmlns="http://www.w3.org/2000/svg" xmlnsXlink={'http://www.w3.org/1999/xlink'}
@@ -135,9 +135,9 @@ export default defineComponent({
 
         </div>
 
-        <div class="flex justify-between mt-6">
-          <div class="flex-1 mr-12">
-            <div class="text-sm text-gray-300 flex items-center"><Icon name="material-symbols:table-chart-view-rounded" class="text-sm mr-1" />站点数据</div>
+        <div class="flex justify-between mt-6 flex-col lg:flex-row">
+          <div class="flex-1 lg:mr-12">
+            <div class="text-sm text-gray-200 flex items-center"><Icon name="material-symbols:table-chart-view-rounded" class="text-sm mr-1" />站点数据</div>
             <div class="text-xs ml-2 text-gray-300">
               <div class="flex items-center justify-between mt-3">
                 <div class="flex items-center"><Icon name="material-symbols:calendar-today" class="mr-1" />本站已运行</div>
@@ -154,8 +154,8 @@ export default defineComponent({
             </div>
           </div>
 
-          <div class="flex-1">
-            <div class="text-sm text-gray-300 flex items-center"><Icon name="material-symbols:settings-rounded" class="text-sm mr-1" />系统设置</div>
+          <div class="flex-1 mt-4 lg:mt-0">
+            <div class="text-sm text-gray-200 flex items-center"><Icon name="material-symbols:settings-rounded" class="text-sm mr-1" />系统设置</div>
             <div class="text-xs ml-2 text-gray-300">
               <div class="flex items-center justify-between mt-3">
                 <div class="flex items-center"><Icon name="material-symbols:background-dot-small" class="mr-1" />壁纸设置</div>
@@ -172,14 +172,6 @@ export default defineComponent({
                   </UTooltip>
                 </div>
               </div>
-              {/* <div class="flex items-center justify-between mt-1">
-                <div class="flex items-center"><Icon name="material-symbols:visibility" class="mr-1" />总访问次数</div>
-                <div id="busuanzi_value_site_pv" class="after:content-['次']"></div>
-              </div>
-              <div class="flex items-center justify-between mt-1">
-                <div class="flex items-center"><Icon name="material-symbols:group-rounded" class="mr-1" />总访问人数</div>
-                <div id="busuanzi_value_site_uv" class="after:content-['人']"></div>
-              </div> */}
             </div>
           </div>
         </div>
