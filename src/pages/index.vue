@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 18:23:55
+ * @LastEditTime: 2024-03-06 09:52:38
  * @description: index
 -->
 
@@ -15,7 +15,15 @@ useHead({
   // titleTemplate: '%s - dshuais',
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - DUSHUAI!` : 'DUSHUAI!'
-  }
+  },
+  link: [{
+    rel: 'stylesheet',
+    href: 'https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css',
+  }],
+  script: [{
+    async: true,
+    src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',
+  }]
 })
 
 const { zoom } = storeToRefs(useAppStore())
@@ -27,13 +35,13 @@ function handleClick() {
   showMessage('hello world!')
 }
 
-if (process.client) {
-  // busuanzi
-  const countScript = document.createElement('script')
-  countScript.async = true
-  countScript.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
-  document.body.append(countScript)
-}
+// if (process.client) {
+//   // busuanzi
+//   const countScript = document.createElement('script')
+//   countScript.async = true
+//   countScript.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+//   document.body.append(countScript)
+// }
 
 </script>
 

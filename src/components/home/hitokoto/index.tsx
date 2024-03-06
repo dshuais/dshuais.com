@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-29 16:00:48
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 18:23:18
+ * @LastEditTime: 2024-03-06 09:42:32
  * @description: homeHitokoto
  */
 import Card from "~/components/card"
@@ -35,9 +35,9 @@ export default defineComponent({
     getData()
 
     return () => (
-      <Card class="w-full h-full flex items-center justify-center flex-col lg:mr-6 py-10 px-6" onClick={getData}>
+      <Card class="w-full h-full flex items-center justify-center flex-col lg:mr-6 py-10 pl-6" onClick={getData}>
         <div class="text-gray-100 w-full flex justify-start">{hitokoto.value.hitokoto}</div>
-        <div class="w-full font-bold flex justify-end mt-4 font-content">-「 {hitokoto.value.from} 」</div>
+        <div class="w-full font-bold flex justify-end mt-4">-「 {hitokoto.value.from} 」</div>
       </Card>
     )
   }

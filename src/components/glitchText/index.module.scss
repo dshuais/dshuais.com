@@ -161,6 +161,7 @@
   // glitch 1s 0.5s linear infinite,
   // expand 1s forwards;
   animation: expand 1s forwards;
+  font-family: 'Glitch', sans-serif;
 
   &:hover {
     animation: glitch 1s 0.5s linear infinite, expand 1s forwards;
@@ -183,6 +184,7 @@
   content: attr(data-text);
   position: absolute;
   left: 0;
+  font-family: 'Glitch', sans-serif;
 }
 
 // .title:before {

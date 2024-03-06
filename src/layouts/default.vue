@@ -81,7 +81,7 @@ function dateHourTip(): string {
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 w-[100vw] h-[100vh] select-none text-gray-100">
+  <div class="fixed top-0 left-0 w-[100vw] h-[100vh] select-none text-gray-100 font-content">
     <Loading :has-loading="loading" />
 
     <ClientOnly>
