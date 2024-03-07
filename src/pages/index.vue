@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-06 09:56:22
+ * @LastEditTime: 2024-03-07 11:10:56
  * @description: index
 -->
 
@@ -66,8 +66,8 @@ if (process.client) {
           <div class="flex items-center justify-between flex-col lg:flex-row">
             <ClientOnly>
               <HomeHitokoto />
+              <HomeTime class="mt-4 lg:mt-0" />
             </ClientOnly>
-            <HomeTime class="mt-4 lg:mt-0" />
           </div>
           <div class="mt-8 mb-4">
             网站列表
