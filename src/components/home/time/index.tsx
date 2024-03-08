@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-29 16:01:46
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-07 12:30:01
+ * @LastEditTime: 2024-03-08 15:04:03
  * @description: HomeTime
  */
 import Card from "~/components/card"
@@ -72,11 +72,11 @@ export default defineComponent({
           <span>星期{curDate.value.w}</span>
         </div>
 
-        <div>
+        <div class="mt-2">
           <span class="font-time text-5xl tracking-widest">{curDate.value.h}:{curDate.value.mm}:{curDate.value.ss}</span>
         </div>
 
-        <div>
+        <div class="mt-2">
           <span>{city.value?.City}市&nbsp;
             {condition.value?.weather}&nbsp;
             {condition.value?.temperature}℃&nbsp;
