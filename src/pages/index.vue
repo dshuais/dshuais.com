@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-08 14:59:01
+ * @LastEditTime: 2024-03-09 16:51:12
  * @description: index
 -->
 
@@ -51,8 +51,8 @@ if (process.client) {
 
     <div class="h-[100vh] max-w-[76rem] m-auto flex flex-col items-center lg:justify-center px-4 lg:px-0 pt-32 lg:pt-0">
       <div class="flex flex-col justify-center items-center select-none" v-show="zoom">
-        <GlitchText class="block sm:hidden" text="Hi," type="auto"></GlitchText>
-        <GlitchText class="block sm:hidden" text="dushuai!" type="auto"></GlitchText>
+        <GlitchText class="block sm:hidden" text="Hi," type="hover"></GlitchText>
+        <GlitchText class="block sm:hidden" text="dushuai!" type="hover"></GlitchText>
         <GlitchText class="hidden sm:block" text="Hi, dushuai!" type="auto"></GlitchText>
       </div>
 
