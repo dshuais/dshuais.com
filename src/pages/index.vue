@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-11 14:35:08
+ * @LastEditTime: 2024-03-11 14:36:18
  * @description: index
 -->
 
@@ -76,6 +76,7 @@ if (process.client) {
               </div>
               网站列表
             </div>
+            <HomeWebsite />
           </div>
         </div>
       </section>
