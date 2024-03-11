@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 16:46:26
+ * @LastEditTime: 2024-03-11 15:58:36
 * @description: HomeInfo
 */
 
@@ -77,7 +77,7 @@ export default defineComponent({
     }
 
     return () => (
-      <Card hover={false} class="w-full h-full pt-10 pb-6">
+      <Card hover={false} class="w-full h-full pt-10 pb-12 flex flex-col justify-between">
         <div onClick={openTimeCapsule}>
           <div class="text-xs w-4 h-4 mb-2">
             <svg data-v-03d4b6aa="" xmlns="http://www.w3.org/2000/svg" xmlnsXlink={'http://www.w3.org/1999/xlink'}
@@ -102,7 +102,7 @@ export default defineComponent({
         </div>
 
         {/* 社交 */}
-        <div class="group w-full h-12 mt-6 flex items-center justify-between px-3 rounded-md hover:bg-[#22222240] transition-[background] duration-300">
+        <div class="group w-full h-12 flex items-center justify-between px-3 rounded-md hover:bg-[#22222240] transition-[background] duration-300">
 
           <div>
             {
@@ -135,7 +135,7 @@ export default defineComponent({
 
         </div>
 
-        <div class="flex justify-between mt-6 flex-col lg:flex-row">
+        <div class="flex justify-between flex-col lg:flex-row">
           <div class="flex-1 lg:mr-12">
             <div class="text-sm text-gray-200 flex items-center"><Icon name="material-symbols:table-chart-view-rounded" class="text-sm mr-1" />站点数据</div>
             <div class="text-xs ml-2 text-gray-300">

@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-11 14:36:18
+ * @LastEditTime: 2024-03-11 16:02:14
  * @description: index
 -->
 
@@ -58,7 +58,7 @@ if (process.client) {
           </ClientOnly>
         </div>
         <div class="relative flex-1 mt-4 lg:mt-0 ml-0 lg:ml-16">
-          <div class="flex items-center justify-between flex-col lg:flex-row relative h-40">
+          <div class="flex items-center justify-between flex-col lg:flex-row relative lg:h-40">
             <ClientOnly>
               <HomeHitokoto class="h-full" />
               <HomeTime class="mt-4 lg:mt-0 h-full" />
