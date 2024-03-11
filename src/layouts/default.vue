@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-05 16:06:34
+ * @LastEditTime: 2024-03-11 16:29:35
  * @description: default layout
 -->
 
@@ -89,6 +89,8 @@ function dateHourTip(): string {
     </ClientOnly>
 
     <slot />
+
+    <Footer class="hidden lg:flex" />
 
     <UNotifications>
       <template #title="{ title }">

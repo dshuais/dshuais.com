@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-11 15:58:36
+ * @LastEditTime: 2024-03-11 16:06:14
 * @description: HomeInfo
 */
 
@@ -77,7 +77,7 @@ export default defineComponent({
     }
 
     return () => (
-      <Card hover={false} class="w-full h-full pt-10 pb-12 flex flex-col justify-between">
+      <Card hover={false} class="w-full h-full pt-10 pb-6 lg:pb-12 flex flex-col justify-between">
         <div onClick={openTimeCapsule}>
           <div class="text-xs w-4 h-4 mb-2">
             <svg data-v-03d4b6aa="" xmlns="http://www.w3.org/2000/svg" xmlnsXlink={'http://www.w3.org/1999/xlink'}

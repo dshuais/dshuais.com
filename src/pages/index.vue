@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-11 16:02:14
+ * @LastEditTime: 2024-03-11 16:28:35
  * @description: index
 -->
 
@@ -79,6 +79,9 @@ if (process.client) {
             <HomeWebsite />
           </div>
         </div>
+
+        <Footer class="block lg:hidden" />
+
       </section>
     </div>
 
