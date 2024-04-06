@@ -33,7 +33,7 @@ The home page of my site. A clean and concise page based on Nuxt + TypeScript.
 (2) 部署（Add new site）
 ![image](https://github.com/dshuais/dshuais.com/assets/88620329/8bde1a8d-dfce-4717-8dee-1d7c68ac33a1)
 
-Deploy with GitHub，选择您fork到的仓库地址。
+Deploy with GitHub，选择您fork到的仓库地址。<br />
 Netlify 会自动检测当前为 Nuxt 项目部署，或手动更改打包部署命令
 
 ![image](https://github.com/dshuais/dshuais.com/assets/88620329/7e0dc384-ebbd-42b0-8eb7-c6ac6643ba76)
@@ -62,10 +62,10 @@ Add domain alias 输入您自己的域名地址即可
 
 ### 常见问题
 
-(1) 载入动画过久，进入首页较慢。
-    从载入动画到进入页面阶段会对当前壁纸进行预加载，单张壁纸资源平均在2m左右，但也有6-10m的壁纸，如网络环境或部署地址不是很理想，就会出现载入动画过久问题。
-    为何采用了 Nuxt 还要对图片进行预加载，是因为页面展现后做了开屏动画，如壁纸未加载完成还是会出现无开屏动画或图片白屏出现的不好的视觉体验。
-    可通过改善网络环境或开启CDN的方式提升网络性能和加载速度。
+(1) 载入动画过久，进入首页较慢。<br />
+    从载入动画到进入页面阶段会对当前壁纸进行预加载，单张壁纸资源平均在2m左右，但也有6-10m的壁纸，如网络环境或部署地址不是很理想，就会出现载入动画过久问题。<br />
+    为何采用了 Nuxt 还要对图片进行预加载，是因为页面展现后做了开屏动画，如壁纸未加载完成还是会出现无开屏动画或图片白屏出现的不好的视觉体验。<br />
+    可通过改善网络环境或开启CDN的方式提升网络性能和加载速度。<br />
 
 > 更多问题欢迎提交 issue 一起讨论优化。
 
