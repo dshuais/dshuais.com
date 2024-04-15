@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-12-04 09:32:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-04-15 12:23:38
+ * @LastEditTime: 2024-04-15 14:16:19
  * @description: index
 -->
 
@@ -48,8 +48,8 @@ if (process.client) {
       <div class="flex flex-col justify-center items-center select-none" v-show="zoom">
         <GlitchText class="block sm:hidden" text="Hi," type="hover"></GlitchText>
         <GlitchText class="block sm:hidden" text="dushuai!" type="hover"></GlitchText>
-        <HomeHoverme text="Hover Me !✌">
-          <GlitchText class="hidden sm:block" text="Hi, dushuai!" type="auto"></GlitchText>
+        <HomeHoverme text="Hover Me !✌" class="hidden sm:block">
+          <GlitchText text="Hi, dushuai!" type="auto"></GlitchText>
         </HomeHoverme>
       </div>
 
