@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-29 15:58:16
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-11 16:06:14
+ * @LastEditTime: 2024-08-04 15:07:09
 * @description: HomeInfo
 */
 
@@ -22,11 +22,13 @@ export default defineComponent({
   name: 'HomeInfo',
   setup() {
 
+    const env = useRuntimeConfig()
+
     const socialList = ref<Social[]>([
       { id: 'github', path: 'https://github.com/dshuais', icon: 'mdi:github', tip: '去GitHub看看~' },
       { id: 'qq', path: 'https://res.abeim.cn/api/qq/?qq=1137896420', icon: 'basil:qq-solid', tip: '一起玩局游戏吧' },
-      { id: 'wechat', path: 'https://files.dshuais.com/images/my/wechat.png', icon: 'ic:baseline-wechat', type: 'pop', tip: '有什么事吗' },
-      { id: 'wechat-public', path: 'https://files.dshuais.com/images/my/wechat-official.png', icon: 'mingcute:wechat-miniprogram-fill', type: 'pop', tip: '订阅走起~' },
+      { id: 'wechat', path: `${env.public.VITE_SITE_FILE_URL}/images/my/wechat.png`, icon: 'ic:baseline-wechat', type: 'pop', tip: '有什么事吗' },
+      { id: 'wechat-public', path: `${env.public.VITE_SITE_FILE_URL}/images/my/wechat-official.png`, icon: 'mingcute:wechat-miniprogram-fill', type: 'pop', tip: '订阅走起~' },
       { id: 'email', path: 'mailto:dsshuais2020@163.com', icon: 'ic:round-email', tip: '来一封Email~' },
       { id: 'juejin', path: 'https://juejin.cn/user/3158230569584056/posts', icon: 'tabler:brand-juejin', tip: '前排围观~' },
     ])
@@ -53,7 +55,7 @@ export default defineComponent({
 
     function randomWallpaper() {
       const index = Math.floor(Math.random() * wallpapers.value)
-      const url = `https://files.dshuais.com/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
+      const url = `${env.public.VITE_SITE_FILE_URL}/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
       setWallpaper('auto', url)
 
       hasLoading.value = true

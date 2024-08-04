@@ -3,7 +3,7 @@
 * @Author: dushuai
 * @Date: 2024-02-21 17:03:39
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-11 16:34:21
+ * @LastEditTime: 2024-08-04 15:15:18
 * @description: footer
 */
 import { NuxtLink } from "#components"
@@ -13,7 +13,7 @@ export default defineComponent({
   setup() {
     return () => (
       <div class="absolute lg:fixed bottom-0 lg:w-full py-2 bg-[#ffffff30] flex justify-center items-center flex-col lg:flex-row text-gray-300 w-[calc(100%+2rem)] ml-[-1rem] lg:ml-0">
-        <div>Copyright&nbsp;&copy; 2022 - {new Date().getFullYear()} <NuxtLink href="https://dshuais.com/" class="hover:text-white">DuShuai</NuxtLink>.</div>
+        <div>Copyright&nbsp;&copy; 2022 - {new Date().getFullYear()} <NuxtLink href="https://dshuais.netlify.app/" class="hover:text-white">DuShuai</NuxtLink>.</div>
         <div class="hidden lg:block">&nbsp;&nbsp;&&nbsp;&nbsp;</div>
         <div>Powered by <NuxtLink href="https://github.com/dshuais" target="_blank" class="hover:text-white">dshuais</NuxtLink>.</div>
         <div class="hidden lg:block">&nbsp;&nbsp;&&nbsp;&nbsp;</div>

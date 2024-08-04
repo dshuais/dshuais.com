@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-08-04 14:53:08
+ * @LastEditTime: 2024-08-04 15:00:03
  * @description: default layout
 -->
 
@@ -16,13 +16,15 @@ const { wallpaperUrl, wallpaper, wallpapers, setWallpaperUrl } = useWallpaper()
 
 const { showMessage } = useNotification()
 
+const env = useRuntimeConfig()
+
 /**
  * 优先初始化图片 防止new Image加载之前的缓存图片
  */
 function initImg() {
   if (wallpaper.value === 'auto') {
     const index = Math.floor(Math.random() * wallpapers.value)
-    const url = `https://files-ds.netlify.app/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
+    const url = `${env.public.VITE_SITE_FILE_URL}/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
     setWallpaperUrl(url)
   }
 }
