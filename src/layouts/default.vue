@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-21 10:58:28
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-11 16:29:35
+ * @LastEditTime: 2024-08-04 14:53:08
  * @description: default layout
 -->
 
@@ -22,7 +22,7 @@ const { showMessage } = useNotification()
 function initImg() {
   if (wallpaper.value === 'auto') {
     const index = Math.floor(Math.random() * wallpapers.value)
-    const url = `https://files.dshuais.com/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
+    const url = `https://files-ds.netlify.app/images/wallpaper/${index}.png` // getImageUrl(`home/${index}.png`)
     setWallpaperUrl(url)
   }
 }
