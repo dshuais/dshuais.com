@@ -2,7 +2,8 @@
 
 The home page of my site. A clean and concise page based on Nuxt + TypeScript.
 
-> 网站地址：[https://www.dshuais.com/](https://www.dshuais.com/)
+> 网站地址：[https://www.dshuais.com/](https://www.dshuais.com/) 域名已过期。
+> 当前预览地址[dshuais](https://dshuais.netlify.app/)
 
 ### 预览
 ![image](https://github.com/dshuais/dshuais.com/assets/88620329/2b64282b-d4ce-4c38-9701-26096d18179a)
